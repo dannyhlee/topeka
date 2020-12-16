@@ -1,0 +1,24 @@
+<template>
+    <template for:each={attractions} for:item="attraction">
+        <div key={attraction.Name} align="center">
+            <button
+                type="button"
+                onclick={toggleDisplay}
+                key={attraction.Name}
+                value={attraction.Name}
+                style="width: 500px"
+            >
+                {attraction.Name}
+            </button>
+            <topeka-attraction
+                name={attraction.Name}
+                description={attraction.Description}
+                picture={attraction.Picture}
+                key={attraction.Name}
+                active-tab={activeTab}
+            >
+            </topeka-attraction>
+        </div>
+        <br key={attraction.Name} />
+    </template>
+</template>
